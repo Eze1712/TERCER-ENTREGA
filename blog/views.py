@@ -12,7 +12,7 @@ def post_create(request):
         if form.is_valid():
             post = form.save(commit=False)
             if request.user.is_authenticated:
-                post.autor = request.user  # Aquí se cambia "author" por "autor"
+                post.autor = request.user  
                 post.save()
                 return redirect("blog:post_list")
             else:
