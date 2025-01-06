@@ -1,0 +1,20 @@
+{% extends "Main/base.html" %}
+
+{% block title %}
+  Publicar
+{% endblock title %}
+
+{% block content_title %}
+  Formulario para crear una publicación
+{% endblock content_title %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.as_p }}  <!-- Usa 'as_p' para tener un formato más limpio de los campos -->
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock content %}

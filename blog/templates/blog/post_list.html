@@ -9,6 +9,7 @@
 {% endblock content_title %}
 
 {% block content %}
+<a href={% url 'blog:post_create' %} class="btn btn-primary mb-3">Crear publicación</a>
   <ul class="list-unstyled">
     {% for post in posts %}
       <li class="mb-4 p-3 border-bottom">
