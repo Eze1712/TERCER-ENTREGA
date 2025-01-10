@@ -1,0 +1,20 @@
+{% extends "Main/base.html" %}
+
+{% block title %}
+  Crear comentario
+{% endblock title %}
+
+{% block content_title %}
+  Agregar un comentario en "{{ post.titulo }}"
+{% endblock content_title %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.as_p }}  
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar comentario</button>
+    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock content %}

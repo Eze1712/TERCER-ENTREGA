@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comentario
+from .forms import PostForm, ComentarioForm
 
 def post_list(request):
     post_list = Post.objects.all()
@@ -22,3 +22,20 @@ def post_create(request):
 
     return render(request, 'blog/post_create.html', {"form": form})
 
+def comentario_create(request, post_id):
+    post = Post.objects.get(id=post_id)  
+    if request.method == "POST":
+        form = ComentarioForm(request.POST)
+        if form.is_valid():
+            comentario = form.save(commit=False)
+            if request.user.is_authenticated:
+                comentario.usuario = request.user 
+                comentario.post = post  
+                comentario.save()
+                return redirect('blog:post_list')  
+            else:
+                form.add_error(None, "Debes estar logueado para comentar")
+    else:
+        form = ComentarioForm()
+
+    return render(request, 'blog/comentario_create.html', {"form": form, "post": post})
