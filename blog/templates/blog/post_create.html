@@ -14,12 +14,6 @@
     <div class="mb-3">
       {{ form.as_p }} 
     </div>
-    <div class="mb-3">
-     
-      <!-- Campo específico para categoría -->
-      <label for="id_categoria" class="form-label">Categoría</label>
-      {{ form.categoria }}
-    </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
     <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Cancelar</a>
   </form>

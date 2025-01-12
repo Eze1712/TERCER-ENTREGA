@@ -9,8 +9,14 @@
 {% endblock content_title %}
 
 {% block content %}
+  <!-- Formulario de búsqueda -->
+  <form method="get" action="{% url 'blog:post_list' %}" class="mb-3">
+    <input type="text" name="q" placeholder="Buscar publicaciones..." value="{{ request.GET.q }}" class="form-control">
+    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+  </form>
+
   <a href="{% url 'blog:post_create' %}" class="btn btn-primary mb-3">Crear publicación</a>
-  
+
   <ul class="list-unstyled">
     {% for post in posts %}
       <li class="mb-4 p-3 border-bottom">
@@ -19,9 +25,9 @@
         </a>
         <p class="mb-2 text-muted">{{ post.contenido }}</p>
         <small class="text-secondary">
-          Publicado el {{ post.fecha_publicacion }}
+          Publicado el {{ post.fecha_publicacion }} por {{ post.autor.username }}
         </small>
-        
+
         <!-- Comentarios del post -->
         <div class="mt-3">
           <h6>Comentarios:</h6>
@@ -40,3 +46,4 @@
     {% endfor %}
   </ul>
 {% endblock content %}
+

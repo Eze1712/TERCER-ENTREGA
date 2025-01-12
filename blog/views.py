@@ -1,10 +1,20 @@
 from django.shortcuts import render, redirect
+from django.db.models import Q
 from .models import Post, Comentario, Categoria
 from .forms import PostForm, ComentarioForm
 
 def post_list(request):
-    post_list = Post.objects.all()
-    return render(request, 'blog/post_list.html', context={"posts": post_list})
+    query = request.GET.get('q', '')  
+    if query:
+        post_list = Post.objects.filter(
+            Q(titulo__icontains=query) | 
+            Q(contenido__icontains=query) | 
+            Q(autor__username__icontains=query)
+        )
+    else:
+        post_list = Post.objects.all()
+
+    return render(request, 'blog/post_list.html', {'posts': post_list})
 
 def post_create(request):
     if request.method == "POST":
