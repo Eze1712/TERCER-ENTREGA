@@ -33,7 +33,7 @@
           <h6>Comentarios:</h6>
           <ul>
             {% for comentario in post.comentarios.all %}
-              <li>{{ comentario.usuario.username }}: {{ comentario.texto }}</li>
+              <li>{{ comentario.usuario.username }}: {{ comentario.contenido }}</li>
             {% empty %}
               <li>No hay comentarios aún.</li>
             {% endfor %}
@@ -46,4 +46,3 @@
     {% endfor %}
   </ul>
 {% endblock content %}
-

@@ -4,12 +4,12 @@ from .models import Post, Comentario, Categoria
 from .forms import PostForm, ComentarioForm
 
 def post_list(request):
-    query = request.GET.get('q', '')  
-    if query:
+    busqueda = request.GET.get('q', '')  
+    if busqueda:
         post_list = Post.objects.filter(
-            Q(titulo__icontains=query) | 
-            Q(contenido__icontains=query) | 
-            Q(autor__username__icontains=query)
+            Q(titulo__icontains=busqueda) | 
+            Q(contenido__icontains=busqueda) | 
+            Q(autor__username__icontains=busqueda)
         )
     else:
         post_list = Post.objects.all()

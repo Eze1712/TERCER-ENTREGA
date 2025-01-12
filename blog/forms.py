@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
-        fields = ['autor', 'contenido']
+        fields = ['usuario', 'contenido']
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Buscar", max_length=100)
