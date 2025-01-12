@@ -4,13 +4,15 @@ from .models import Post, Comentario, Categoria
 from .forms import PostForm, ComentarioForm
 
 def post_list(request):
-    busqueda = request.GET.get('q', '')  
-    if busqueda:
+    query = request.GET.get('q', '')  
+    if query:
+        # Buscar en el título y contenido de los posts, y en el contenido de los comentarios
         post_list = Post.objects.filter(
-            Q(titulo__icontains=busqueda) | 
-            Q(contenido__icontains=busqueda) | 
-            Q(autor__username__icontains=busqueda)
-        )
+            Q(titulo__icontains=query) | 
+            Q(contenido__icontains=query) | 
+            Q(autor__username__icontains=query) |
+            Q(comentarios__contenido__icontains=query)  # Busca en los comentarios
+        ).distinct()  # Para evitar que un post se repita si tiene varios comentarios que coinciden
     else:
         post_list = Post.objects.all()
 
