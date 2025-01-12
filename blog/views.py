@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post, Comentario
+from .models import Post, Comentario, Categoria
 from .forms import PostForm, ComentarioForm
 
 def post_list(request):
