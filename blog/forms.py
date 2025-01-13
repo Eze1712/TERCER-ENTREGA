@@ -1,18 +1,26 @@
 from django import forms
-from .models import Post, Comentario, Categoria
+from .models import Post, Comentario, Leyenda
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['titulo', 'contenido', 'estado', 'categoria']
 
-    categoria = forms.ModelChoiceField(queryset=Categoria.objects.all(), empty_label=None)
-
+   
+    categoria = forms.ChoiceField(
+        choices=Post._meta.get_field('categoria').choices,  
+        required=True  
+    )
 
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ['usuario', 'contenido']
+
+class LeyendaForm(forms.ModelForm):
+    class Meta:
+        model = Leyenda
+        fields = ['nombre', 'fecha_nacimiento', 'genero', 'historia']
 
 class SearchForm(forms.Form):
     query = forms.CharField(label="Buscar", max_length=100)

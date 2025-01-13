@@ -1,0 +1,14 @@
+{% extends 'Main/base.html' %}
+
+{% block title %}Crear Leyenda{% endblock title %}
+
+{% block content_title %}Crear una nueva leyenda{% endblock content_title %}
+
+{% block content %}
+    <form method="POST" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar Leyenda</button>
+    </form>
+    <a href="{% url 'blog:leyenda_list' %}" class="btn btn-secondary mt-3">Volver a la lista</a>
+{% endblock content %}
