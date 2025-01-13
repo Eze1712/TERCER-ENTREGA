@@ -14,7 +14,7 @@
 
 # Templates 
 ![alt text](templates_blog.png).
-![alt text](image.png)
+![alt text](templates_Main)
 
 # Templates de blog:
 # comentario_create.html: Es el modulo donde se establece el form para agregar comentarios a las publicaciones. Se puede acceder a través de Blog en la pagina inicial.
