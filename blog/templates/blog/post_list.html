@@ -28,6 +28,15 @@
           Publicado el {{ post.fecha_publicacion }} por {{ post.autor.username }}
         </small>
 
+        <!-- Mostrar categoría como hashtag -->
+        <span class="category-tag">
+          {% if post.categoria == 'G' %}
+            #Guitarra
+          {% elif post.categoria == 'B' %}
+            #Bajo
+          {% endif %}
+        </span>
+
         <!-- Comentarios del post -->
         <div class="mt-3">
           <h6>Comentarios:</h6>

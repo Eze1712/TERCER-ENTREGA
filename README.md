@@ -7,6 +7,9 @@
 
 # El administrador tiene el username de admin, y la contraseña 123
 
+
+# La web tiene una pagina principal donde se aprecia unas imagenes (represntacion de imagenes subidas por usuarios), y arriba en el navegador se puede ir a blogs para crear de usuarios, o 
+
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Templates 
