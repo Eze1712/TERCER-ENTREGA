@@ -8,7 +8,7 @@
 # El administrador tiene el username de admin, y la contraseña 123
 
 
-# La web tiene una pagina principal donde se aprecia unas imagenes (represntacion de imagenes subidas por usuarios), y arriba en el navegador se puede ir a blogs para crear de usuarios, o 
+# La web tiene una pagina principal donde se aprecia unas imagenes (represntacion de imagenes subidas por usuarios), y arriba en el navegador se puede ir a blogs para crear los mismos, o a Leyendas para crear posteos de leyendas de la música. Los posteos tienen los campos de título, contenido, estado y categoria (guitarra o bajo), y las leyendas tienen campos de nombre, fecha de nacimiento, genero e historia.
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -57,4 +57,3 @@
 
 # views.py: Este código define las vistas para el blog. Esta gestiona la lógica para el servidor, es decir, lo que no vemos.En este caso, se definen vistas para listar publicaciones, crear publicaciones, crear comentarios, listar leyendas y crear leyendas. También se incluye una vista para buscar contenido en el blog. Cada vista utiliza los modelos y formularios definidos en models.py y forms.py, respectivamente, para interactuar con la base de datos y manejar la lógica de la aplicación.
 
-a
