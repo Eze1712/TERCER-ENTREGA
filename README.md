@@ -3,7 +3,7 @@
 # Soy Ezequiel Basualdo, y presento aqui la tercer entrega de mi cursada de Python para Coder House.
 # Se presenta en esta tercer entrega un proyecto de blog para que guitarristas y bajistas de todo tipo comenten sus experiencias en el mundo de la música o sus pensamientos creando asi una comunidad. Tambien hay una seccion de Leyendas donde se podrá ver diferentes artista de la historia junto a su información personal. 
 
-# El proyecto esta realizado en un ambiente de Django con Python, HTML, CSS y Bootstrap a través de la aplicación Visual Code. Cuenta con 2 apps, blog Y Main. Blog posee 4 archivos HTML, y Main 2. Es necesario aclarar que todos los templates HTML heredan de base.html excepto por su puesto, por este último.
+# El proyecto esta realizado en un entorno de venv, y utiliza Django con Python, HTML, CSS y Bootstrap a través de la aplicación Visual Code. Cuenta con 2 apps, blog Y Main. Blog posee 4 archivos HTML, y Main 2. Es necesario aclarar que todos los templates HTML heredan de base.html excepto por su puesto, por este último.
 
 # El administrador tiene el username de admin, y la contraseña 123
 
